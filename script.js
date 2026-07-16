@@ -13,20 +13,15 @@ document.getElementById("formReserva").addEventListener("submit", function(e) {
 
 // Compartir aplicación
 document.getElementById("compartirApp").addEventListener("click", async () => {
-    const enlace = "https://mega.nz/folder/RNRT2ZhD#bzyGujwPRLca2N52WOL9gQ";
+  const enlace = "https://mega.nz/folder/RNRT2ZhD#bzyGujwPRLca2N52WOL9gQ";
 
-    try {
-        if (navigator.share) {
-            await navigator.share({
-                title: "Elevate Hair Studio",
-                text: "💇 Descargá la app oficial de Elevate Hair Studio:",
-                url: enlace
-            });
-        } else {
-            navigator.clipboard.writeText(enlace);
-            alert("El enlace fue copiado al portapapeles.");
-        }
-    } catch (e) {
-        // El usuario canceló o hubo un error
-    }
+  if (navigator.share) {
+    await navigator.share({
+      title: "Elevate Hair Studio",
+      text: "Descargá nuestra aplicación",
+      url: enlace
+    });
+  } else {
+    window.open(enlace, "_blank");
+  }
 });
