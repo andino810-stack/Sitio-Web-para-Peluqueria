@@ -27,6 +27,6 @@ document.getElementById("compartirApp").addEventListener("click", async () => {
             alert("El enlace fue copiado al portapapeles.");
         }
     } catch (e) {
-        // El usuario canceló el compartir
+        // El usuario canceló o hubo un error
     }
 });
